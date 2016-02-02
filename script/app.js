@@ -7,3 +7,8 @@ function Portfolios (opts) {
   this.finishedOn = opts.finishedOn;
   this.snippet = opts.snippet;
 };
+
+
+porfolioPieces.forEach(function(ele){
+  portfolioElements.push(new Portfolios(ele));
+});
