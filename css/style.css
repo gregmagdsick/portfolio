@@ -23,8 +23,6 @@ nav {
   max-height: 75px;
 }
 
-
-
-/*.headShot {
-  display:
-}*/
+section > article:first-child {
+  visibility: hidden;
+}

@@ -9,7 +9,7 @@ function Portfolios (opts) {
 };
 
 Portfolios.prototype.toHtml = function() {
-  var $newPortfolio= $('section.portfolioPieces').clone();
+  var $newPortfolio= $('article.template').clone();
   console.log($newPortfolio);
 
   $newPortfolio.find('h3').html('<a href="' + this.deployUrl + '">' + this.title + '</a>');
