@@ -1,0 +1,41 @@
+.about_me {
+  display: flex;
+  align-items: flex-end;
+}
+
+nav {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.headShot {
+  width: 80%;
+  height: 80%;
+  max-width: 960px;
+  max-height: 960px;
+  padding-right: 1%;
+}
+
+
+section > article:first-child {
+  visibility: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a {
+  font-size: 3em;
+}
+
+h2  {
+  padding-top: 2%;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 2em;
+}
