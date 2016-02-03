@@ -14,15 +14,28 @@ nav {
   height: 80%;
   max-width: 960px;
   max-height: 960px;
+  padding-right: 1%;
 }
 
-.navImg {
-  width: 60%;
-  height: 60%;
-  max-width: 75px;
-  max-height: 75px;
-}
 
 section > article:first-child {
   visibility: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a {
+  font-size: 3em;
+}
+
+h2  {
+  padding-top: 2%;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 2em;
 }

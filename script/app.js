@@ -32,5 +32,5 @@ porfolioPieces.forEach(function(ele){
 });
 
 portfolioElements.forEach(function(a){
-  $('#portfolioPieces').append(a.toHtml());
+  $('#portfolio-pieces').append(a.toHtml());
 });
