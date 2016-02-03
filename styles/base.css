@@ -20,12 +20,14 @@ nav {
   text-align: right;
 }
 
-.icon-menu li {
+section > article:first-child {
   display: none;
 }
 
-section > article:first-child {
-  display: none;
+section img {
+  padding: 1%;
+  width: 10%;
+  max-width: 30px;
 }
 
 a {
@@ -44,4 +46,5 @@ h2  {
 ul {
   list-style-type: none;
   font-size: 2em;
+  display: none;
 }
