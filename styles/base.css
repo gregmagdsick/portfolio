@@ -12,14 +12,20 @@ nav {
 .headShot {
   width: 80%;
   height: 80%;
-  max-width: 960px;
-  max-height: 960px;
+  max-width: 550px;
   padding-right: 1%;
 }
 
+.day-tag {
+  text-align: right;
+}
+
+.icon-menu li {
+  display: none;
+}
 
 section > article:first-child {
-  visibility: hidden;
+  display: none;
 }
 
 a {

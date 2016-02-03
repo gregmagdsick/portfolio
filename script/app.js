@@ -14,7 +14,7 @@ Portfolios.prototype.toHtml = function() {
 
   $newPortfolio.find('h3').html('<a href="' + this.deployUrl + '">' + this.title + '</a>');
   $newPortfolio.find('time').html('about ' + parseInt((new Date() - new Date(this.finishedOn))/60/60/24/1000) + ' days ago.');
-  $newPortfolio.find('.pieceSummary').html('<p>' + this.snippet + '<a href="' + this.repoUrl + '">the repo is here</a>');
+  $newPortfolio.find('.piece-summary').html('<p>' + this.snippet + '<a href="' + this.repoUrl + '">the repo is here</a>');
 
   $newPortfolio.append('<hr>');
 
