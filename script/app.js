@@ -34,3 +34,10 @@ porfolioPieces.forEach(function(ele){
 portfolioElements.forEach(function(a){
   $('#portfolio-pieces').append(a.toHtml());
 });
+
+$('section img').on('click', function(e){
+  e.preventDefault();
+  console.log($(this));
+  $(this).siblings('ul').css('display', 'block');
+
+});
