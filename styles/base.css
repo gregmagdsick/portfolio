@@ -1,3 +1,7 @@
+header {
+  justify-content: center;
+}
+
 .about_me {
   display: flex;
   align-items: flex-end;
@@ -12,12 +16,13 @@ nav {
 .headShot {
   width: 80%;
   height: 80%;
-  max-width: 550px;
+  max-width: 400px;
   padding-right: 1%;
 }
 
 .day-tag {
   text-align: right;
+  color: #0FA0CE;
 }
 
 section > article:first-child {
@@ -47,4 +52,23 @@ ul {
   list-style-type: none;
   font-size: 2em;
   display: none;
+}
+
+.hamburger-menu:hover ul {
+  display: block;
+}
+
+@media only screen and (min-width: 640px){
+  section img {
+    display: none;
+  }
+
+  section ul {
+    display: flex;
+    justify-content: center;
+    p
+  }
+  li {
+    padding-right: 10%;
+  }
 }
