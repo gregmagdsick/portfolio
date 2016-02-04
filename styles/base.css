@@ -20,6 +20,10 @@ nav {
   padding-right: 1%;
 }
 
+h4 {
+  text-align: center;
+}
+
 .day-tag {
   text-align: right;
   color: #0FA0CE;
@@ -70,5 +74,8 @@ ul {
   }
   li {
     padding-right: 10%;
+  }
+  .hamburger-menu:hover ul {
+    display: flex;
   }
 }
