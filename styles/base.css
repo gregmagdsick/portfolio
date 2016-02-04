@@ -2,80 +2,17 @@ header {
   justify-content: center;
 }
 
-.about_me {
-  display: flex;
-  align-items: flex-end;
-}
-
 nav {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.headShot {
-  width: 80%;
-  height: 80%;
-  max-width: 400px;
-  padding-right: 1%;
-}
-
 h4 {
   text-align: center;
-}
-
-.day-tag {
-  text-align: right;
-  color: #0FA0CE;
-}
-
-section > article:first-child {
-  display: none;
-}
-
-section img {
-  padding: 1%;
-  width: 10%;
-  max-width: 30px;
 }
 
 a {
   text-decoration: none;
   color: black;
-}
-
-nav a {
-  font-size: 3em;
-}
-
-h2  {
-  padding-top: 2%;
-}
-
-ul {
-  list-style-type: none;
-  font-size: 2em;
-  display: none;
-}
-
-.hamburger-menu:hover ul {
-  display: block;
-}
-
-@media only screen and (min-width: 640px){
-  section img {
-    display: none;
-  }
-
-  section ul {
-    display: flex;
-    justify-content: center;
-    p
-  }
-  li {
-    padding-right: 10%;
-  }
-  .hamburger-menu:hover ul {
-    display: flex;
-  }
 }

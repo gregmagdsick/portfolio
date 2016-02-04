@@ -1,0 +1,30 @@
+section > article:first-child {
+  display: none;
+}
+
+.day-tag {
+  text-align: right;
+  color: #0FA0CE;
+}
+
+.hamburger-menu:hover ul {
+  display: block;
+}
+
+@media only screen and (min-width: 640px){
+  section img {
+    display: none;
+  }
+
+  section ul {
+    display: flex;
+    justify-content: center;
+    p
+  }
+  li {
+    padding-right: 10%;
+  }
+  .hamburger-menu:hover ul {
+    display: flex;
+  }
+}
