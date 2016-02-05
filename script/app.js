@@ -10,16 +10,10 @@ function Portfolios (opts) {
 
 Portfolios.prototype.toHtml = function() {
   var portfolioItem = Handlebars.compile($('#porfolio-template').text());
-
+  this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
+  this.publishedRef = ' ' + this.daysAgo + ' days ago.';
   return portfolioItem(this);
-
 };
-// var template = Handlebars.compile($('#portfolio-template').text());
-// this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
-// this.publishedRef = ' ' + this.daysAgo + ' days ago.';
-// console.log(this);
-// console.log(template(this));
-// return template(this);
 
 porfolioPieces.sort(function(a,b) {
   return (new Date(b.finishedOn)) - (new Date(a.finishedOn));
