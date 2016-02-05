@@ -7,6 +7,16 @@
   display: block;
 }
 
+Modules.css
+section a {
+  font-weight: bold;
+}
+
+h3 {
+  margin-top: 3rem;
+  margin-bottom: 0rem;
+}
+
 @media only screen and (min-width: 640px){
   section img {
     display: none;
