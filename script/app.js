@@ -9,19 +9,17 @@ function Portfolios (opts) {
 };
 
 Portfolios.prototype.toHtml = function() {
-  var $newPortfolio= $('article.template').clone();
-  console.log($newPortfolio);
+  var portfolioItem = Handlebars.compile($('#porfolio-template').text());
 
-  $newPortfolio.find('h3').html('<a href="' + this.deployUrl + '">' + this.title + '</a>');
-  $newPortfolio.find('time').html('about ' + parseInt((new Date() - new Date(this.finishedOn))/60/60/24/1000) + ' days ago.');
-  $newPortfolio.find('.piece-summary').html('<p>' + this.snippet + '<a href="' + this.repoUrl + '">the repo is here</a>');
+  return portfolioItem(this);
 
-  $newPortfolio.append('<hr>');
-
-  $('article').removeClass('template');
-
-  return $newPortfolio;
 };
+// var template = Handlebars.compile($('#portfolio-template').text());
+// this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
+// this.publishedRef = ' ' + this.daysAgo + ' days ago.';
+// console.log(this);
+// console.log(template(this));
+// return template(this);
 
 porfolioPieces.sort(function(a,b) {
   return (new Date(b.finishedOn)) - (new Date(a.finishedOn));
@@ -33,4 +31,5 @@ porfolioPieces.forEach(function(ele){
 
 portfolioElements.forEach(function(a){
   $('#portfolio-pieces').append(a.toHtml());
+  console.log(a.toHtml());
 });

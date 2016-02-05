@@ -10,6 +10,12 @@
   padding-right: 1%;
 }
 
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 section img {
   padding: 1%;
   width: 10%;

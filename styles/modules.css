@@ -1,7 +1,3 @@
-section > article:first-child {
-  display: none;
-}
-
 .day-tag {
   text-align: right;
   color: #0FA0CE;

@@ -9,7 +9,20 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/skeleton.css">
     <link rel="stylesheet" href="styles/icon-fonts.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/base.css">
+    <script id="porfolio-template" type="text/x-handlebars-template">
+      <article class="clearfix">
+        <header>
+          <h3><a href = "{{deployUrl}}">{{title}}</a></h3>
+          <div class = "day-tag">
+            Finished {{publishedRef}}
+          </div>
+        </header>
+        <section>{{snippet}} The repo can be found <a href= "{{repoUrl}}"> here</a>.</section>
+      </article>
+    </script>
   </head>
   <body class="container">
     <header class="row about_me">
@@ -29,15 +42,6 @@
       </ul>
     </section>
     <section class="part-content" id="portfolio-pieces">
-      <article class="template">
-        <header>
-          <h3>Title</h3>
-          <div class="day-tag">
-            Finished <time pubdate datetime="2001-01-01">DATE</time>
-          </div>
-        </header>
-        <section class="piece-summary"></section>
-      </article>
     </section>
     <section id="bio" class="part-content">
       <h2>About Me:</h2>
@@ -47,6 +51,7 @@
       <p>Eadem nunc mea adversum te oratio est. Tubulo putas dicere? Equidem, sed audistine modo de Carneade? At, si voluptas esset bonum, desideraret. Eaedem enim utilitates poterunt eas labefactare atque pervertere. Minime vero, inquit ille, consentit. </p>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script type="text/javascript" src="script/portfolioPieces.js"></script>
     <script type="text/javascript" src="script/app.js"></script>
     <script type="text/javascript" src="script/handleTabs.js"></script>
