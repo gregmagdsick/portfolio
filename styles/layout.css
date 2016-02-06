@@ -8,6 +8,7 @@
   height: 80%;
   max-width: 300px;
   padding-right: 1%;
+  border-radius: 10px;
 }
 
 .clearfix::after {
@@ -30,8 +31,19 @@ section img {
   max-width: 30px;
 }
 
+nav {
+  position: fixed;
+  top: 125px;
+  left: 5%;
+  background-color: rgba(0, 0, 0, 0.5);;
+  border-radius: 3px;
+}
+
 nav a {
+  color: white;
+  margin: 2px;
   font-size: 2em;
+  display: block;
 }
 
 h2  {
