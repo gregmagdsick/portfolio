@@ -1,5 +1,13 @@
 header {
   justify-content: center;
+  margin-top: 5%;
+
+}
+
+body {
+  width 85%;
+  max-width: 960px;
+  justify-content: center;
 }
 
 nav {
@@ -7,6 +15,8 @@ nav {
   flex-direction: column;
   align-items: flex-end;
 }
+
+
 
 h4 {
   text-align: center;

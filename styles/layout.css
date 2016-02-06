@@ -6,7 +6,7 @@
 .headShot {
   width: 80%;
   height: 80%;
-  max-width: 400px;
+  max-width: 300px;
   padding-right: 1%;
 }
 
@@ -16,6 +16,14 @@
   clear: both;
 }
 
+.hamburger-menu {
+  margin-left: 7.5%;
+}
+
+a:hover {
+  color: #0FA0CE
+}
+
 section img {
   padding: 1%;
   width: 10%;
@@ -23,7 +31,7 @@ section img {
 }
 
 nav a {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 h2  {
@@ -32,6 +40,12 @@ h2  {
 
 ul {
   list-style-type: none;
-  font-size: 2em;
+  font-size: 1em;
   display: none;
+}
+
+.part-content {
+  width: 85%;
+  justify-content: center;
+  margin-left: 7.5%;
 }
