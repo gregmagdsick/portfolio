@@ -35,7 +35,6 @@
     });
   };
 
-
   Portfolios.initHomePage = function() {
     Portfolios.all.forEach(function(a){
       $('#portfolio-pieces').append(a.toHtml());
