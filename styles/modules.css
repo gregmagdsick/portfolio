@@ -1,0 +1,35 @@
+.day-tag {
+  text-align: right;
+  color: #0FA0CE;
+}
+
+.hamburger-menu:hover ul {
+  display: block;
+}
+
+section a {
+  font-weight: bold;
+}
+
+h3 {
+  margin-top: 3rem;
+  margin-bottom: 0rem;
+}
+
+@media only screen and (min-width: 640px){
+  section img {
+    display: none;
+  }
+
+  section ul {
+    display: flex;
+    justify-content: center;
+    p
+  }
+  li {
+    padding-right: 10%;
+  }
+  .hamburger-menu:hover ul {
+    display: flex;
+  }
+}

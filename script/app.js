@@ -1,4 +1,6 @@
-var portfolioElements = [];
+var portfolioElements = {};
+
+portfolioElements.all = [];
 
 function Portfolios (opts) {
   this.title = opts.title;
@@ -9,28 +11,36 @@ function Portfolios (opts) {
 };
 
 Portfolios.prototype.toHtml = function() {
-  var $newPortfolio= $('article.template').clone();
-  console.log($newPortfolio);
-
-  $newPortfolio.find('h3').html('<a href="' + this.deployUrl + '">' + this.title + '</a>');
-  $newPortfolio.find('time').html('about ' + parseInt((new Date() - new Date(this.finishedOn))/60/60/24/1000) + ' days ago.');
-  $newPortfolio.find('.piece-summary').html('<p>' + this.snippet + '<a href="' + this.repoUrl + '">the repo is here</a>');
-
-  $newPortfolio.append('<hr>');
-
-  $('article').removeClass('template');
-
-  return $newPortfolio;
+  var portfolioItem = Handlebars.compile($('#porfolio-template').text());
+  this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
+  this.publishedRef = ' ' + this.daysAgo + ' days ago.';
+  return portfolioItem(this);
 };
 
-porfolioPieces.sort(function(a,b) {
-  return (new Date(b.finishedOn)) - (new Date(a.finishedOn));
-});
+var portfolioPieces = [];
 
-porfolioPieces.forEach(function(ele){
-  portfolioElements.push(new Portfolios(ele));
-});
 
-portfolioElements.forEach(function(a){
-  $('#portfolio-pieces').append(a.toHtml());
-});
+portfolioPieces.getAll = function (){
+  $.getJSON('data/portfolioPieces.json', function(data, message, xhr){
+    localStorage.setItem('portfolioArticles' , JSON.stringify(data));
+    portfolioPieces.loadAll(JSON.parse(localStorage.portfolioArticles));
+    portfolioElements.initHomePage();
+  });
+};
+
+portfolioPieces.loadAll = function (portfolioPieces){
+  portfolioPieces.sort(function(a,b) {
+    return (new Date(b.finishedOn)) - (new Date(a.finishedOn));
+  });
+
+  portfolioPieces.forEach(function(ele){
+    portfolioElements.all.push(new Portfolios(ele));
+  });
+};
+
+
+portfolioElements.initHomePage = function() {
+  portfolioElements.all.forEach(function(a){
+    $('#portfolio-pieces').append(a.toHtml());
+  });
+};
