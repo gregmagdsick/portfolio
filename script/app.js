@@ -8,8 +8,6 @@
     this.snippet = opts.snippet;
   };
 
-  Portfolios.all = [];
-
   module.Portfolios = Portfolios;
 
   Portfolios.prototype.toHtml = function() {
@@ -32,9 +30,8 @@
       return (new Date(b.finishedOn)) - (new Date(a.finishedOn));
     });
 
-    portfolioData.forEach(function(ele){
-      console.log(ele);
-      Portfolios.all.push(new Portfolios(ele));
+    Portfolios.all = portfolioData.map(function(data){
+      return new Portfolios(data);
     });
   };
 
