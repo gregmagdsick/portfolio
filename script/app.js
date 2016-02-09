@@ -19,7 +19,6 @@ Portfolios.prototype.toHtml = function() {
 
 var portfolioPieces = [];
 
-
 portfolioPieces.getAll = function (){
   $.getJSON('data/portfolioPieces.json', function(data, message, xhr){
     localStorage.setItem('portfolioArticles' , JSON.stringify(data));
@@ -37,7 +36,6 @@ portfolioPieces.loadAll = function (portfolioPieces){
     portfolioElements.all.push(new Portfolios(ele));
   });
 };
-
 
 portfolioElements.initHomePage = function() {
   portfolioElements.all.forEach(function(a){
