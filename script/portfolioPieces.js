@@ -1,4 +1,4 @@
-var porfolioPieces = [
+var portfolioPieces = [
   {
     title: 'Check My Rent',
     repoUrl: 'https://github.com/gregmagdsick/checkMyRent',
