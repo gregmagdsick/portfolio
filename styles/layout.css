@@ -22,8 +22,10 @@
   margin-left: 7.5%;
 }
 
-a:hover {
-  color: #0FA0CE
+.part-content {
+  width: 85%;
+  justify-content: center;
+  margin-left: 7.5%;
 }
 
 section img {
@@ -40,15 +42,15 @@ nav {
   border-radius: 3px;
 }
 
+a:hover {
+  color: #0FA0CE
+}
+
 nav a {
   color: white;
   margin: 2px;
   font-size: 2em;
   display: block;
-}
-
-h2  {
-  padding-top: 2%;
 }
 
 ul {
@@ -57,13 +59,12 @@ ul {
   display: none;
 }
 
-.part-content {
-  width: 85%;
-  justify-content: center;
-  margin-left: 7.5%;
+h2  {
+  padding-top: 2%;
 }
 
 h4 {
+  text-align: center;
   margin-bottom: 0px;
 }
 
