@@ -1,44 +1,43 @@
-var portfolioElements = {};
+(function(module) {
 
-portfolioElements.all = [];
+  function Portfolios (opts) {
+    this.title = opts.title;
+    this.repoUrl = opts.repoUrl;
+    this.deployUrl = opts.deployUrl;
+    this.finishedOn = opts.finishedOn;
+    this.snippet = opts.snippet;
+  };
 
-function Portfolios (opts) {
-  this.title = opts.title;
-  this.repoUrl = opts.repoUrl;
-  this.deployUrl = opts.deployUrl;
-  this.finishedOn = opts.finishedOn;
-  this.snippet = opts.snippet;
-};
+  module.Portfolios = Portfolios;
 
-Portfolios.prototype.toHtml = function() {
-  var portfolioItem = Handlebars.compile($('#porfolio-template').text());
-  this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
-  this.publishedRef = ' ' + this.daysAgo + ' days ago.';
-  return portfolioItem(this);
-};
+  Portfolios.prototype.toHtml = function() {
+    var portfolioItem = Handlebars.compile($('#porfolio-template').text());
+    this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
+    this.publishedRef = ' ' + this.daysAgo + ' days ago.';
+    return portfolioItem(this);
+  };
 
-var portfolioPieces = [];
+  Portfolios.getAll = function (){
+    $.getJSON('data/portfolioPieces.json', function(data, message, xhr){
+      localStorage.setItem('portfolioArticles' , JSON.stringify(data));
+      Portfolios.loadAll(JSON.parse(localStorage.portfolioArticles));
+      Portfolios.initHomePage();
+    });
+  };
 
-portfolioPieces.getAll = function (){
-  $.getJSON('data/portfolioPieces.json', function(data, message, xhr){
-    localStorage.setItem('portfolioArticles' , JSON.stringify(data));
-    portfolioPieces.loadAll(JSON.parse(localStorage.portfolioArticles));
-    portfolioElements.initHomePage();
-  });
-};
+  Portfolios.loadAll = function (portfolioData){
+    portfolioData.sort(function(a,b) {
+      return (new Date(b.finishedOn)) - (new Date(a.finishedOn));
+    });
 
-portfolioPieces.loadAll = function (portfolioPieces){
-  portfolioPieces.sort(function(a,b) {
-    return (new Date(b.finishedOn)) - (new Date(a.finishedOn));
-  });
+    Portfolios.all = portfolioData.map(function(data){
+      return new Portfolios(data);
+    });
+  };
 
-  portfolioPieces.forEach(function(ele){
-    portfolioElements.all.push(new Portfolios(ele));
-  });
-};
-
-portfolioElements.initHomePage = function() {
-  portfolioElements.all.forEach(function(a){
-    $('#portfolio-pieces').append(a.toHtml());
-  });
-};
+  Portfolios.initHomePage = function() {
+    Portfolios.all.forEach(function(a){
+      $('#portfolio-pieces').append(a.toHtml());
+    });
+  };
+}(window));
