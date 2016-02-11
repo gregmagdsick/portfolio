@@ -1,19 +1,16 @@
 (function(module) {
 
   function Portfolios (opts) {
-    this.title = opts.title;
-    this.repoUrl = opts.repoUrl;
-    this.deployUrl = opts.deployUrl;
-    this.finishedOn = opts.finishedOn;
-    this.snippet = opts.snippet;
+    Object.keys(opts).forEach(function(ele){
+      this[ele] = opts[ele];
+    },this);
   };
-
-  module.Portfolios = Portfolios;
 
   Portfolios.prototype.toHtml = function() {
     var portfolioItem = Handlebars.compile($('#porfolio-template').text());
     this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
     this.publishedRef = ' ' + this.daysAgo + ' days ago.';
+    console.log('toHtml return: ' + portfolioItem(this));
     return portfolioItem(this);
   };
 
@@ -29,7 +26,6 @@
     portfolioData.sort(function(a,b) {
       return (new Date(b.finishedOn)) - (new Date(a.finishedOn));
     });
-
     Portfolios.all = portfolioData.map(function(data){
       return new Portfolios(data);
     });
@@ -37,7 +33,9 @@
 
   Portfolios.initHomePage = function() {
     Portfolios.all.forEach(function(a){
+      console.log('initHomePage output: ' + a.toHtml());
       $('#portfolio-pieces').append(a.toHtml());
     });
   };
+  module.Portfolios = Portfolios;
 }(window));

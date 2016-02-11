@@ -1,6 +1,9 @@
 # Greg's Portfolio Project from CodeFellows 301d5 Course
 
-Github Logo courtesy of http://www.iconsdb.com/black-icons/github-10-icon.html
-Twitter logo courtesy of http://brandingsource.blogspot.com/2012/06/new-logo-twitter.html
+Icon fonts courtesy of icomoon.io
 
-Used some example code from our lab assignment from today to get an idea for general structure of the data layout on my page, as well as the structure of the JS files
+The general structure is based off of a pair lab assignment in our course.
+
+I have built this site to be responsive. Initially, I wanted to force myself to learn Skeleton with this project, which I did to an extent, but I realized that the site is so minimalistic, that Skeleton was more of a hindrance than a help.
+
+You should be able to see the CSS media query take effect at 640 pixels, more as an exercise than being necessary for this page in its current form.
