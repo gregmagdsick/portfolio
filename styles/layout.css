@@ -36,13 +36,13 @@ section img {
 nav {
   position: fixed;
   top: 125px;
-  left: 5%;
+  left: 7.5%;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3px;
 }
 
 a:hover {
-  color: #0FA0CE
+  color: #0FA0CE;
 }
 
 nav a {
@@ -62,7 +62,7 @@ h2  {
   padding-top: 2%;
 }
 
-h4 {
+h1 {
   text-align: center;
   margin-bottom: 0px;
 }

@@ -32,4 +32,12 @@ h3 {
   .hamburger-menu:hover ul {
     display: flex;
   }
+
+  nav {
+    position: fixed;
+    top: 125px;
+    left: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+  }
 }
