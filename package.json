@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Greg Magdsick's portfolio project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregmagdsick/portfolio.git"
+  },
+  "author": "Greg Magdsick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gregmagdsick/portfolio/issues"
+  },
+  "homepage": "https://github.com/gregmagdsick/portfolio#readme"
+}
