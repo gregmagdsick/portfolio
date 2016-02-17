@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="styles/modules.css">
     <script id="porfolio-template" type="text/x-handlebars-template">
       <article class="clearfix">
-          <h3><a href = "{{deployUrl}}">{{title}}</a></h3>
+          <h3><a href = "{{html_url}}">{{name}}</a></h3>
           <div class = "day-tag">
-            Finished {{publishedRef}}
+            Updated {{updated_at}}
           </div>
-        <section>{{snippet}} The repo can be found <a href= "{{repoUrl}}"> here</a>.</section>
+        <section>{{description}} The repo can be found <a href= "{{homepage}}"> here</a>.</section>
       </article>
     </script>
   </head>
