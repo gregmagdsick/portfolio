@@ -15,10 +15,15 @@
   };
 
   Portfolios.getAll = function (){
-    $.getJSON('data/portfolioPieces.json', function(data, message, xhr){
-      localStorage.setItem('portfolioArticles' , JSON.stringify(data));
-      Portfolios.loadAll(JSON.parse(localStorage.portfolioArticles));
-      Portfolios.initHomePage();
+    $.ajax({
+      url: 'https://api.github.com/users/gregmagdsick/repos' + '?per_page=5&sort=updated',
+      type: 'GET',
+      headers: { 'Authorization': 'token ' + githubToken },
+      success: function(data, mesage, xhr) {
+        console.log(data);
+        localStorage.setItem('portfolioArticles', JSON.stringify(data));
+        Portfolios.loadAll(JSON.parse(localStorage.portfolioArticles));
+      }
     });
   };
 
