@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/gregmagdsick/portfolio/issues"
   },
-  "homepage": "https://github.com/gregmagdsick/portfolio#readme"
+  "homepage": "https://github.com/gregmagdsick/portfolio#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.10"
+  }
 }
