@@ -14,7 +14,7 @@
     return portfolioItem(this);
   };
 
-  Portfolios.getAll = function (){
+  Portfolios.getAll = function (callback){
     $.ajax({
       url: 'https://api.github.com/users/gregmagdsick/repos' + '?per_page=5&sort=updated',
       type: 'GET',
@@ -24,7 +24,7 @@
         localStorage.setItem('portfolioArticles', JSON.stringify(data));
         Portfolios.loadAll(JSON.parse(localStorage.portfolioArticles));
       }
-    });
+    }).done(callback);
   };
 
   Portfolios.loadAll = function (portfolioData){
