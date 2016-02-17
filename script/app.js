@@ -10,7 +10,6 @@
     var portfolioItem = Handlebars.compile($('#porfolio-template').text());
     this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
     this.publishedRef = ' ' + this.daysAgo + ' days ago.';
-    console.log('toHtml return: ' + portfolioItem(this));
     return portfolioItem(this);
   };
 
@@ -20,7 +19,6 @@
       type: 'GET',
       headers: { 'Authorization': 'token ' + githubToken },
       success: function(data, mesage, xhr) {
-        console.log(data);
         localStorage.setItem('portfolioArticles', JSON.stringify(data));
         Portfolios.loadAll(JSON.parse(localStorage.portfolioArticles));
       }
@@ -38,7 +36,6 @@
 
   Portfolios.initHomePage = function() {
     Portfolios.all.forEach(function(a){
-      console.log('initHomePage output: ' + a.toHtml());
       $('#portfolio-pieces').append(a.toHtml());
     });
   };
