@@ -8,8 +8,8 @@
 
   Portfolios.prototype.toHtml = function() {
     var portfolioItem = Handlebars.compile($('#porfolio-template').text());
-    this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
-    this.publishedRef = ' ' + this.daysAgo + ' days ago.';
+    var update = this.updated_at;
+    this.date = update.substring(0,10);
     return portfolioItem(this);
   };
 
