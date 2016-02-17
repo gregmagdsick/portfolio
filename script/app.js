@@ -8,18 +8,21 @@
 
   Portfolios.prototype.toHtml = function() {
     var portfolioItem = Handlebars.compile($('#porfolio-template').text());
-    this.daysAgo = parseInt((new Date() - new Date (this.finishedOn))/60/60/24/1000);
-    this.publishedRef = ' ' + this.daysAgo + ' days ago.';
-    console.log('toHtml return: ' + portfolioItem(this));
+    var update = this.updated_at;
+    this.date = update.substring(0,10);
     return portfolioItem(this);
   };
 
-  Portfolios.getAll = function (){
-    $.getJSON('data/portfolioPieces.json', function(data, message, xhr){
-      localStorage.setItem('portfolioArticles' , JSON.stringify(data));
-      Portfolios.loadAll(JSON.parse(localStorage.portfolioArticles));
-      Portfolios.initHomePage();
-    });
+  Portfolios.getAll = function (callback){
+    $.ajax({
+      url: 'https://api.github.com/users/gregmagdsick/repos' + '?per_page=5&sort=updated',
+      type: 'GET',
+      headers: { 'Authorization': 'token ' + githubToken },
+      success: function(data, mesage, xhr) {
+        localStorage.setItem('portfolioArticles', JSON.stringify(data));
+        Portfolios.loadAll(JSON.parse(localStorage.portfolioArticles));
+      }
+    }).done(callback);
   };
 
   Portfolios.loadAll = function (portfolioData){
@@ -33,7 +36,6 @@
 
   Portfolios.initHomePage = function() {
     Portfolios.all.forEach(function(a){
-      console.log('initHomePage output: ' + a.toHtml());
       $('#portfolio-pieces').append(a.toHtml());
     });
   };
