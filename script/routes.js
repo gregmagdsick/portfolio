@@ -1,4 +1,4 @@
 page('/', portfolioController.index);
-page('/bio', bioController.index);
+page('/bio/:marker', bioController.index);
 
 page();
