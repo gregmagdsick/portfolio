@@ -2,7 +2,6 @@
   var portfolioController = {};
 
   portfolioController.index = function() {
-
     $('main > section').hide();
     $('#portfolio-pieces').show();
   };
