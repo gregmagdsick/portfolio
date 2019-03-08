@@ -1,5 +1,9 @@
 # Greg's Portfolio Project from CodeFellows 301d5 Course
 
+delpoyed at: https://greg-magdsick-portfolio.herokuapp.com/
+
+This app now uses environment variables to store the gitHub token for use with the gitHub API.
+
 Icon fonts courtesy of icomoon.io
 
 The general structure is based off of a pair lab assignment in our course, but showcases my abilities as a developer.
